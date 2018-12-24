@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  水资源量，单位是升
  */
-@property (nonatomic ,assign) CGFloat waterAmount;
+@property (nonatomic, assign) CGFloat waterAmount;
 
 + (instancetype)shareInstance;
 

@@ -6,8 +6,8 @@
 //  Copyright © 2018 丁玉松. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "People.h"
+#import <Foundation/Foundation.h>
 
 /**
  在一个与世隔绝的小岛上，水缸里的水资源，被小岛上的人共享，有人往里面加水，有人从里面取水喝。
@@ -17,17 +17,22 @@
  缺点：因为只能存在一个实例对象，原则上不能继承，所以也实现不了多态。新增和修改功能，只能修改源代码，违反了开闭原则。同时要求外界只能通过特定方法使用，关系外界逻辑，对外界使用有限制，所以也违反了单一职责原则
  
  */
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[]) {
     @autoreleasepool {
-        
+
         People *people1 = [People new];
         [people1 drinkWater];
-        
+
         People *people2 = [People new];
         [people2 drinkWater];
-        
+
         People *people3 = [People new];
         [people3 collectWater];
+
+        NSFileManager *manager = [[NSFileManager alloc] init];
+        NSFileManager *manager2 = [NSFileManager defaultManager];
+
+        NSLog(@"\n%p\n%p", manager, manager2);
     }
     return 0;
 }
